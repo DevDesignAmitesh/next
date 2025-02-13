@@ -2,7 +2,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { assets } from '@/assets/assets'
-export default function Navbar({ isDarkMode, setIsDarkMode }) {
+import Link from "next/link";
+export default function Navbar({ isDarkMode }) {
   const [isScroll, setIsScroll] = useState(false);
   const sideMenuRef = useRef();
   const openMenu = () => {
@@ -30,48 +31,55 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
         flex items-center justify-between z-50 border-b-[0.1px] bg-opacity-95
         "
         >
-        <h1 className="tracking-wider uppercase cursor-pointer text-2xl font-semibold text-lightGreen">Macro-Rides</h1>
+       <Link href='/'> <h1 className="tracking-wider uppercase cursor-pointer text-2xl font-semibold text-lightGreen">Macro-Rides</h1></Link>
                 <ul
           className="hidden md:flex items-center gap-6 lg:gap-8 
         rounded-full px-12 py-3"
         >
           <li>
-            <a className="" href="#top">
+            <a className="" href="/">
               Home
             </a>
           </li>
           <li>
-            <a className="" href="#about">
+            <a className="" href="/services">
               Services
             </a>
           </li>
-          <li>
-            <a className="font-Ovo" href="#services">
-              How it works
-            </a>
-          </li>
-          <li>
-            <a className="font-Ovo" href="#work">
+                  <li>
+            <a className="font-Ovo" href="/partnership">
              Partnership
             </a>
           </li>
-          <li>
+          {/* <li>
             <a className="font-Ovo" href="#contact">
               Drivers
             </a>
-          </li>
+          </li> */}
           <li>
-            <a className="font-Ovo" href="#contact">
-              About-us
+            <a className="font-Ovo" href="/about-us">
+              About us
             </a>
           </li>
         </ul>
         <div className="flex items-center gap-4">
           
           <a
-            className="hidden lg:flex gap-3 items-center px-10 
-            py-2.5 rounded-full ml-4 bg-lightGreen text-white"
-            href="#contact"
+            className="hidden lg:flex gap-3 items-center px-5 
+            py-2 rounded-full ml-4 border text-white hover:bg-lightBG duration-400"
+            href="/common-signup"
+          >
+            Login/Signup
+            <Image
+              src={assets.arrow_icon_dark}
+              alt="Arrow"
+              className="w-3 h-3"
+            />
+          </a>
+          <a
+            className="hidden lg:flex gap-3 items-center px-5 
+            py-2 rounded-full ml-4 bg-lightGreen text-white hover:bg-green-600 duration-500"
+            href="/contact-us"
           >
             Contact
             <Image
@@ -94,7 +102,7 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
         <ul
           ref={sideMenuRef}
           className="flex md:hidden flex-col gap-4 px-10 py-20 fixed -right-64
-top-0 bottom-0 w-64 z-50 h-screen bg-lightBG transition duration-500 dark:bg-darkHover dark:text-black"
+top-0 bottom-0 w-64 z-50 h-screen bg-lightBG transition duration-500 dark:bg-darkHover"
         >
           <div className="absolute right-6 top-6" onClick={closeMenu}>
             <Image
@@ -104,39 +112,42 @@ top-0 bottom-0 w-64 z-50 h-screen bg-lightBG transition duration-500 dark:bg-dar
             />
           </div>
           <li>
-            <a className="" onClick={closeMenu} href="#top">
+            <a className="" onClick={closeMenu} href="/">
               Home
             </a>
           </li>
           <li>
-            <a className="" onClick={closeMenu} href="#about">
+            <a className="" onClick={closeMenu} href="/services">
              Services
             </a>
           </li>
+     
           <li>
-            <a className="" onClick={closeMenu} href="#how-it-works">
-              How It works
-            </a>
-          </li>
-          <li>
-            <a className="" onClick={closeMenu} href="#how-it-works">
+            <a className="" onClick={closeMenu} href="/partnership">
               Partnership
               </a>
+          
           </li>
           <li>
-            <a className="" onClick={closeMenu} href="#drivers">
-              Drivers
-            </a>
-          </li>
-          <li>
-            <a className="" onClick={closeMenu} href="#contact">
+            <a className="" onClick={closeMenu} href="/about-us">
               About-us
             </a>
           </li>
           <li>
-            <a className="border-b flex gap-5 w-32 items-center " onClick={closeMenu} href="#contact">
+            <Link href="/common-signup" className="border-b flex gap-5 w-32 items-center " onClick={closeMenu}  >
+            Login/Signup
+            <Image
+              src={assets.arrow_icon_dark}
+              alt="Arrow"
+              className="w-3 h-3"
+            />
+            </Link>
+          </li>
+         
+          <li>
+            <Link href="/contact-us" className="border-b flex gap-5 w-32 items-center " onClick={closeMenu}  >
              Contact us <Image src={assets.arrow_icon_dark} alt="arrow" className="w-3 h-3" />
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

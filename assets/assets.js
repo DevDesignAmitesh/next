@@ -12,7 +12,15 @@ import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import green_icon from './green_icon.webp';
 import clock_green from './clock_green.png';
 import ecoFriendly from './ecoFriendly.png';
-
+import MobileLogin from '@/assets/Mobile login.gif'
+import Img_GET_Support from '@/assets/Img-Get support.avif'
+import Hero_image_Partners from '@/assets/Hero-image-Partners.avif'
+import Fuel from '@/assets/Customer-scale.avif';
+import Business_Growth from '@/assets/Business-Growth.avif'
+import Smile from '@/assets/Smile.avif'
+import Sticker from '@/assets/Sticker 5.svg'
+import sssurf from '@/assets/sssurf.svg'
+// import LoginPNG from './'
 export const assets = {
     close_black,
     close_white,
@@ -28,6 +36,15 @@ export const assets = {
     green_icon,
     clock_green,
     ecoFriendly,
+    MobileLogin,
+    Img_GET_Support,
+    Hero_image_Partners,
+    Fuel,
+    Business_Growth,
+    Sticker,
+    Smile,
+    sssurf
+
 }
 
 export const keyPoints = [{
