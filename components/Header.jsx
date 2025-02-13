@@ -3,9 +3,12 @@ import React from "react";
 import { assets, keyPoints } from "@/assets/assets";
 import Image from "next/image";
 import Link from "next/link";
-
+import Navbar from "../components/Navbar";
 export default function Header() {
   return (
+    <>
+    
+    <Navbar />
     <div className="pt-24 pb-24 bg-darkBG text-white flex items-center justify-center">
       <div className="max-w-7xl w-full flex flex-col lg:flex-row justify-between items-center px-6">
         <div className="lg:w-1/2 text-center md:text-left">
@@ -20,13 +23,18 @@ export default function Header() {
             affordable, and environmentally conscious.
           </p>
           <div className="flex gap-5 items-center mt-10 flex-wrap justify-center md:justify-start">
-           <Link href='/signup'>
-           <button className="py-3 px-5 rounded-sm bg-lightGreen hover:bg-green-600 duration-400 mb-4 md:mb-0">
-              Book a ride
-            </button></Link>
-            <button className="py-3 px-5 border rounded-sm hover:bg-white/10 duration-400">
-              Partner with us
-            </button>
+            <Link href="/user-signup">
+              <button className="py-3 px-5 rounded-sm bg-lightGreen hover:bg-green-600 duration-400 mb-4 md:mb-0">
+                Book a ride
+              </button>
+            </Link>
+
+            <Link href='/partnership'>
+              {" "}
+              <button className="py-3 px-5 border rounded-sm hover:bg-white/10 duration-400">
+                Partner with us
+              </button>
+            </Link>
           </div>
           <div className="relative flex gap-10 items-center justify-center mt-8">
             <div className="flex">
@@ -64,6 +72,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 }
